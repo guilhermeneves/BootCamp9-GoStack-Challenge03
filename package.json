@@ -1,5 +1,5 @@
 {
-  "name": "desafio2",
+  "name": "desafio3",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
@@ -26,5 +26,7 @@
     "prettier": "^1.18.2",
     "sequelize-cli": "^5.5.1",
     "sucrase": "^3.10.1"
-  }
+  },
+  "repository": "https://github.com/guilhermeneves/BootCamp9-GoStack-Challenge03.git",
+  "author": "Neves, Guilherme <guilherme.neves@monsanto.com>"
 }
