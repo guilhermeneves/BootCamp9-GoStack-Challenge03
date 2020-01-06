@@ -2,24 +2,24 @@ import { parseISO, format } from 'date-fns';
 import pt from 'date-fns/locale/pt';
 import Mail from '../../lib/Mail';
 
-class EnrollMail {
+class UpdateEnroll {
   get key() {
-    return 'EnrollMail';
+    return 'UpdateEnroll';
   }
 
   async handle({ data }) {
-    const { name, email, title, startDate, endDate } = data;
+    const { name, email, title, start_date, endDate } = data;
 
     await Mail.sendMail({
       to: `${name} <${email}>`,
-      subject: 'Parabéns! Nova Matrícula',
+      subject: 'Atualização de Matrícula',
       // text: `Sua matrícula foi confirmada com início em ${startDate}
       // e se encerra em ${endDate} e ${title}`,
-      template: 'newEnroll',
+      template: 'updateEnroll',
       context: {
         student: name,
         plan: title,
-        startDate: format(parseISO(startDate), 'dd-MM-yyyy', {
+        startDate: format(parseISO(start_date), 'dd-MM-yyyy', {
           locale: pt,
         }),
         endDate: format(parseISO(endDate), 'dd-MM-yyyy', {
@@ -30,4 +30,4 @@ class EnrollMail {
   }
 }
 
-export default new EnrollMail();
+export default new UpdateEnroll();
